@@ -24,8 +24,8 @@ function calculateResult() {
 
     // Map the result to the corresponding area
     const resultMap = {
-        a: 'Cibersegurança. DESCRIÇÃO: Protege sistemas, redes e dados contra ataques digitais, garantindo a segurança das informações.',
-        b: 'Criptomoedas. DESCRIÇÃO: Estudo e aplicação de moedas digitais descentralizadas, como Bitcoin, incluindo tecnologias como blockchain.',
+        a: 'Cibersegurança.<br> DESCRIÇÃO: Protege sistemas, redes e dados contra ataques digitais, garantindo a segurança das informações.',
+        b: 'Criptomoedas.<br> DESCRIÇÃO: Estudo e aplicação de moedas digitais descentralizadas, como Bitcoin, incluindo tecnologias como blockchain.',
         c: 'Gestão de TI.   DESCRIÇÃO: Administração de recursos de tecnologia da informação em uma organização, focando em infraestrutura, suporte e estratégias de TI.',
         d: 'Dados. DESCRIÇÃO: Envolve a análise e gestão de grandes volumes de dados para extrair insights e apoiar a tomada de decisões.',
         e: 'Programação. DESCRIÇÃO: Criação de software e aplicativos por meio de linguagens de programação, desenvolvendo soluções tecnológicas.',
