@@ -30,7 +30,7 @@ function calculateResult() {
     // Display the result
     const resultDiv = document.getElementById('result');
     if (topTwo.length > 0) {
-        resultDiv.innerHTML = `<h2>Você tem o perfil perfeito para as áreas de:</h2>
+        resultDiv.innerHTML = `<h2>Você tem o perfil ideal para as áreas de:</h2>
                                <ul>
                                    <li>${resultMap[topTwo[0][0]]}</li><br> 
                                    <li>${resultMap[topTwo[1][0]]}</li>
