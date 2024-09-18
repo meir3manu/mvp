@@ -1,35 +1,50 @@
+/* GERAL */
 body {
-    font-family: 'Roboto', Arial, sans-serif; 
-    background-color: #392361; 
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    background: linear-gradient(to bottom, #392361, #6a1b9a); 
     margin: 0;
     padding: 0;
-    
+    color: #fff;
+    background-attachment: fixed; /* Garante que o fundo cubra toda a página */
+}
+
+textarea:focus,
+input:focus,
+select:focus,
+button:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .container {
-    background-color: #ffffff;
-    padding: 20px; /* Maior espaço interno */
-    border-radius: 12px; /* Bordas mais arredondadas */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais suave e pronunciada */
-    width: 100%;
-    max-width: 750px; /* Largura máxima aumentada */
-    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+    height: 100vh;
 }
 
-.header {
+header,
+main,
+footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #fff34d; /* Cor do cabeçalho mais tecnológica */
-    padding: 10px 20px; /* Maior espaço interno */
-    border-radius: 12px 12px 0 0; /* Bordas arredondadas no topo */
+    justify-content: center;
+    width: 100%;
 }
 
-.header img {
-    max-width: 120px; /* Tamanho máximo ajustado */
-    height: auto;
+header,
+footer {
+    height: 100px;
+    padding: 30px 0;
 }
 
+main {
+    margin: 20px 0 140px;
+}
+
+/* cabeçalho principal branco */
 .header h1 {
     font-size: 30px; /* Tamanho da fonte aumentado */
     color: #392361; /* Cor do texto mais clara */
@@ -38,8 +53,9 @@ body {
 }
 
 .site-header {
-    background-color: white;
-    padding: 10PX 20PX;
+    background: white; /* Fundo translúcido rgba(255, 255, 255, 0.9)*/
+    height: 70px;
+    padding: 0 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -52,38 +68,15 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .logo {
-    max-width: 50px;
+    max-width: 60px;
     height: auto;
 }
 
-.header {
-    display: flex;
-    align-items: center; /* Alinha verticalmente o h1 e a imagem */
-}
-
-.imteste {
-    max-width: 120px; /* Tamanho máximo ajustado */
-    height: auto;
-
-    position: relative; /* Removido o posicionamento absoluto */
-    margin-left: 10px; /* Espaçamento entre o h1 e a imagem */
-}
-
-
-
-/* Estilo básico para o menu de navegação */
-
-/* Padronizar espaçamento entre os links de navegação */
-.nav-links li, nav ul li {
-    margin-right: 10px; /* Espaçamento entre os links */
-}
-
-
-
-
+/* Navegação */
 .nav-links {
     list-style-type: none;
     padding: 0;
@@ -92,173 +85,237 @@ body {
 
 .nav-links li {
     display: inline;
-    margin-right: 15px;
-    
+    margin-left: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333; /* Cor do texto dos links */
-    font-size: 16px; /* Tamanho da fonte */
+    color: #333;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4c2d84;
+    transform: scale(1.1);
 }
 
 /* Estilo específico para o botão de LOGIN */
 .login-button {
-    background-color: rgb(219, 219, 213); /* Cor de fundo do botão */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border-radius: 5px; /* Cantos arredondados */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra do botão */
-    font-weight: bold; /* Texto em negrito */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave */
+    background-color: rgb(219, 219, 213);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Estilo para o botão LOGIN quando o mouse passa sobre ele */
 .login-button:hover {
-    background-color:#fff34d ; /* Cor de fundo ao passar o mouse */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada ao passar o mouse */
+    background-color: #fff34d;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ESCONDER ELEMENTOS */
+.hide {
+    display: none;
+}
+
+#quizz-container,
+#score-container {
+    color: #222;
+    text-align: center;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff; /* Cor de fundo do container */
+    margin: 20px auto; /* Espaçamento automático para centralizar */
+    border-radius: 15px; /* Borda arredondada */
 }
 
 
-nav ul {
+/* cabeçalho amarelo*/
+/* HEADER */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+.header {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* Cor do cabeçalho mais tecnológica */
+    padding: 5px 20px; /* Maior espaço interno */
+    border-radius: 12px 12px 0 0; /* Bordas arredondadas no topo */
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.3);
+    animation: pulse 4s infinite; /* Adiciona o efeito de pulsar */
 }
 
-nav ul li {
-    margin-left: 20px;
+.header img {
+    max-width: 160px; /* Tamanho máximo ajustado */
+    height: auto;
+    animation: pulse 3s infinite; /* Adiciona o efeito de pulsar com duração diferente */
 }
 
-nav ul li a {
-    color: #392361;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+/* Progress Container */
+#progress-container {
+    width: 100%;
+    max-width: 200px; /* Ajusta o comprimento do contêiner para um tamanho menor */
+    margin: 5px 20px; /* Ajusta a margem para manter o espaçamento */
+    text-align: right; /* Alinha o conteúdo à direita */
+    float: right ; /* Alinha o contêiner à direita do layout */
+}
+
+#progress-bar {
+    height: 5px;
+    background-color: #4c2d84;
+    width: 50%; /* Ajuste o comprimento da barra de progresso para ser menor */
+    transition: width 0.1s;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#progress-text {
+    font-size: 15px;
+    color: black;
     
 }
 
-nav ul li a:hover {
-    color:#4c2d84;
+/* SCORE CONTAINER TEXT */
+#score-container p {
+    margin: 20px 0;
 }
 
-
-.caixa {
-    background-color: white;
-    padding: 20px; 
-    border-radius: 12px; 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
-    width: 100%;
-    max-width: 750px; 
-    box-sizing: border-box;
-    margin: auto; /* Centraliza a caixa horizontalmente */
+#score-container #display-score {
+    font-size: 20px; /* Tamanho da fonte ajustado */
+    font-weight: bold;
+    color: #2c3e50; /* Cor do texto */
 }
 
-.question {
-    margin-bottom: 25px; /* Espaçamento aumentado entre perguntas */
-}
-
-.question h2 {
-    font-size: 20px; /* Tamanho da fonte aumentado */
-    margin-bottom: 13px; /* Espaçamento aumentado abaixo do título */
-    color: #333;
-    font-weight: 500; /* Peso da fonte ajustado */
-}
-
-label {
-    display: block;
-    margin-bottom: 8px; /* Espaçamento ajustado */
-    font-size: 18px; /* Tamanho da fonte aumentado */
-    color: #666; /* Cor do texto mais suave */
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 14px; /* Maior espaço interno */
-    background-color: #392361; /* Cor de fundo mais tecnológica */
-    color: #ffffff; /* Cor do texto clara */
-    border: none;
-    border-radius: 8px; /* Bordas arredondadas */
+/* RESTART BUTTON */
+#restart {
+    background-color: #333; /* Cor de fundo do botão */
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    border: none; /* Removido borda para um visual mais limpo */
+    width: 200px; /* Largura do botão ajustada */
+    text-transform: uppercase;
+    margin-top: 20px;
     cursor: pointer;
-    font-size: 18px; /* Tamanho da fonte aumentado */
-    font-weight: 600; /* Peso da fonte ajustado */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+    transition: background-color 0.3s, transform 0.3s; /* Adicionado efeito de transformação */
 }
 
-button:hover {
-    background-color: #392361; /* Cor de fundo mais escura ao passar o mouse */
-    transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
+#restart:hover {
+    background-color: #555; /* Cor do fundo no hover */
+    transform: scale(1.05); /* Efeito de escala no hover */
 }
 
-#result {
-    margin-top: 25px; /* Espaçamento aumentado acima do resultado */
-    font-size: 15px; /* Tamanho da fonte aumentado */
-    text-align: center;
-    color: #333;
-    font-weight: 300; /* Peso da fonte ajustado */
+/* Quizz container */
+#question {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
 }
 
-/* Estilo para a página com ID "home" */
-/* Estilo para a página com ID "home" */
-#home {
-    background-color: white;
+#answers-box {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
-body {
-    font-family: 'Roboto', Arial, sans-serif; 
-    background-color: #392361; 
-    margin: 0;
-    padding: 0;
-}
-
-/* Ajustes na imagem principal */
-.fotoprincipal {
-    max-width: 98%; /* Garante que a imagem não ultrapasse a largura do container */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove espaços em branco abaixo da imagem */
-    margin: 20px auto; /* Centraliza a imagem e adiciona espaço ao redor */
-    border-radius: 8px; /* Adiciona cantos arredondados à imagem */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar a imagem */
-}
-
-/* Centralização do conteúdo principal */
-.conteudo-principal {
-    text-align: center; /* Centraliza o texto e a imagem */
-    padding: 20px; /* Espaçamento interno para o conteúdo */
-}
-
-
-
-
-/* Corrigido o nome da classe para .sobref */
-.sobref {
-    max-width: 90%; /* Garante que a imagem não ultrapasse a largura do container */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove espaços em branco abaixo da imagem */
-    margin: 10px auto; /* Centraliza a imagem e adiciona espaço ao redor */
-    border-radius: 8px; /* Adiciona cantos arredondados à imagem */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar a imagem */
-}
-
-/* Container das imagens para alinhamento e espaçamento */
-.image-gallery {
+#answers-box button {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    color: #222;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#answers-box button:hover {
+    background-color: #4c2d84;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+#answers-box .btn-letter {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #2a272a;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
     justify-content: center;
-    gap: 10px; /* Espaço entre as imagens */
-    padding: 20px; /* Espaçamento interno ao redor das imagens */
+    align-items: center;
+    flex: 0 0 60px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-
-#plataforma{
-    background-color: white;
+.question-answer {
+    flex: 1;
+    padding: 10px;
+    margin-left: 15px;
+    font-size: 15px;
 }
 
+/* RESPONSIVO */
+@media (max-width: 450px) {
+    #quizz-container,
+    #score-container {
+        border: none;
+        width: 100%;
+        box-shadow: none;
+    }
 
+    #answers-box {
+        max-width: 100%;
+    }
 
+    #answers-box button {
+        font-size: 16px;
+    }
+
+    #answers-box .btn-letter {
+        font-size: 20px;
+    }
+
+    #score-container #display-score {
+        font-size: 28px;
+    }
+}
+
+.draggable-item, .movable-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: move;
+    transition: background-color 0.3s;
+}
+
+.draggable-item:hover, .movable-item:hover {
+    background-color: #e0e0e0;
+}
+
+.drop-zone {
+    padding: 20px;
+    border: 2px dashed #ccc;
+    margin-top: 20px;
+    text-align: center;
+}
 
 /* Certifique-se de que o rodapé fica fixo na parte inferior */
 html, body {
@@ -277,9 +334,10 @@ body {
 
 /* Estilo para o rodapé */
 .site-footer {
-    background-color: #e77ab2;
+    background-color:#e77ab2; /* Cor de fundo do rodapé */
     color: #fff;
     text-align: center;
     padding: 20px;
     width: 100%;
+    font-size: 14px;
 }
