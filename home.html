@@ -10,36 +10,112 @@
     <header class="site-header">
         <div class="header-container">
             <img src="logo-vozes-na-tech.jpg" alt="Logo da Vozes na Tech" class="logo">
+            
+            <!-- Adicionando o seletor de idiomas -->
+            <select id="languageSelector">
+                <option value="pt" selected>Português</option>
+                <option value="en">Inglês</option>
+                <option value="es">Espanhol</option>
+            </select>
+            
             <nav>
                 <ul class="nav-links">
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre nós</a></li>
-                    <li><a href="index.html">Teste</a></li>
-                    <li><a href="login.html" class="login-button">LOGIN</a></li>
+                    <li><a href="home.html" data-lang-pt="Home" data-lang-en="Home" data-lang-es="Inicio">Home</a></li>
+                    <li><a href="sobre.html" data-lang-pt="Sobre nós" data-lang-en="About us" data-lang-es="Sobre nosotros">Sobre nós</a></li>
+                    <li><a href="index.html" data-lang-pt="Teste" data-lang-en="Test" data-lang-es="Prueba">Teste</a></li>
+                    <li><a href="login.html" class="login-button" data-lang-pt="LOGIN" data-lang-en="LOGIN" data-lang-es="INICIAR SESIÓN">LOGIN</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
-    <div class="image-gallery">
+    <div class="image-gallery" id="imageGallery">
         <img src="home0.png" alt="Imagem 1" class="sobref">
-        <img src="home1.png" alt="Imagem 1" class="sobref">
-        <img src="home2.png" alt="Imagem 2" class="sobref">
-        <img src="home3.png" alt="Imagem 3" class="sobref">
+        <img src="home1.png" alt="Imagem 2" class="sobref">
+        <img src="home2.png" alt="Imagem 3" class="sobref">
+        <img src="home3.png" alt="Imagem 4" class="sobref">
     </div>
-
+    <div class="container">
+        <h1 data-lang-pt="VENHA FAZER PARTE DA VOZES NA TECH" data-lang-en="JOIN VOZES NA TECH" data-lang-es="ÚNETE A VOZES NA TECH">
+            VENHA FAZER PARTE DA VOZES NA TECH
+        </h1>
+        <div class="options">
+            <div class="option">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOqBjxTorLz0x0jtC_sUSk1C4HPLf9CweJFnRk7aJZMJQ3rA/viewform" target="_blank">
+                    <img src="aluna.png" alt="Quero ser Aluna">
+                </a>
+                <p data-lang-pt="QUERO SER ALUNA" data-lang-en="I WANT TO BE A STUDENT" data-lang-es="QUIERO SER ALUMNA">QUERO SER ALUNA</p>
+            </div>
+            <div class="option">
+                <img src="voluntaria.png" alt="Quero ser Voluntaria">
+                <p data-lang-pt="QUERO SER VOLUNTARIO (A)" data-lang-en="I WANT TO BE A VOLUNTEER" data-lang-es="QUIERO SER VOLUNTARIA">QUERO SER VOLUNTARIA(O)</p>
+            </div>
+            <div class="option">
+                <a href="https://forms.gle/wSRT8WoBuYqv6rQD9" target="_blank">
+                    <img src="parceira.png" alt="Quero ser Cliente ou Parceiro">
+                    </a>
+                    <p data-lang-pt="QUERO SER PARCEIRO(A) OU APOIADOR(AR)" data-lang-en="I WANT TO BE A PARTNER OR SUPPORTER" data-lang-es="QUIERO SER SOCIO O SEGUIDOR">QUERO SER PARCEIRO OU APOIADOR</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
     <footer class="site-footer">
         <div class="footer-content">
-            <p>&copy; 2024 Vozes na Tech. Todos os direitos reservados.</p>
-            <p><a href="plataforma.html">Plataforma</a> | <a href="https://linktr.ee/vozesnatech">Contato</a> | <a href="https://www.instagram.com/vozesnatech/">Instagram</a> | <a href="https://www.linkedin.com/company/vozesnatech">LinkedIn</a></p>
-            <p>Email: contate.vozesnatech@gmail.com</p>
+            <p data-lang-pt="&copy; 2024 Vozes na Tech. Todos os direitos reservados." data-lang-en="&copy; 2024 Vozes na Tech. All rights reserved." data-lang-es="&copy; 2024 Vozes na Tech. Todos los derechos reservados.">
+                &copy; 2024 Vozes na Tech. Todos os direitos reservados.
+            </p>
+            <p>
+                <a href="plataforma.html" data-lang-pt="Plataforma" data-lang-en="Platform" data-lang-es="Plataforma">Plataforma</a> | 
+                <a href="https://linktr.ee/vozesnatech" data-lang-pt="Contato" data-lang-en="Contact" data-lang-es="Contacto">Contato</a> | 
+                <a href="https://www.instagram.com/vozesnatech/" data-lang-pt="Instagram" data-lang-en="Instagram" data-lang-es="Instagram">Instagram</a> | 
+                <a href="https://www.linkedin.com/company/vozesnatech" data-lang-pt="LinkedIn" data-lang-en="LinkedIn" data-lang-es="LinkedIn">LinkedIn</a>
+            </p>
+            <p data-lang-pt="Email: contate.vozesnatech@gmail.com" data-lang-en="Email: contact.vozesnatech@gmail.com" data-lang-es="Correo: contacta.vozesnatech@gmail.com">
+                Email: contate.vozesnatech@gmail.com
+            </p>
         </div>
     </footer>
+
+    <script>
+        const images = {
+            pt: ["home0.png", "home1.png", "home2.png", "home3.png"],
+            en: ["home0.png", "home_en1.png", "home_en2.png", "home_en3.png"],
+            es: ["home0.png", "home_es1.png", "home_es2.png", "home_es3.png"]
+        };
+
+        const languageSelector = document.getElementById('languageSelector');
+        const imageGallery = document.getElementById('imageGallery');
+
+        languageSelector.addEventListener('change', (event) => {
+            const selectedLanguage = event.target.value;
+            updateImageGallery(selectedLanguage);
+            updateTextLanguage(selectedLanguage);
+        });
+
+        function updateImageGallery(language) {
+            imageGallery.innerHTML = ''; // Limpa a galeria atual
+            images[language].forEach(src => {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = `Imagem em ${language}`;
+                img.classList.add('sobref');
+                imageGallery.appendChild(img);
+            });
+        }
+
+        function updateTextLanguage(language) {
+            const elements = document.querySelectorAll('[data-lang-' + language + ']');
+            elements.forEach(el => {
+                el.innerHTML = el.getAttribute('data-lang-' + language);
+            });
+        }
+
+        // Chama a função para definir o idioma padrão ao carregar a página
+        updateTextLanguage('pt');
+    </script>
 </body>
 </html>
-
-
-
 
 
         
