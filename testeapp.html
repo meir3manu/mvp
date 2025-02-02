@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vozes na Tech</title> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="scriptt.js" defer></script>
+  </head>
+  <body>
+
+      <main>
+        <!-- QUIZZ CONTAINER -->
+        <div id="quizz-container">
+          <div class="header">
+            <h3><big id="quiz-title"> Perfil Tech </big></h3>
+            <img src="cabe.png" alt="Logo da Vozes na Tech" class="imteste">
+          </div>
+                    
+            <!-- Progress Bar -->
+            <div id="question-container">
+                
+                <p id="question">
+                    <span id="question-number"></span> 
+                    <span id="question-text">Teste Vozes na Tech</span>
+                </p>
+                <p id="progress-text">Pergunta 1 de 11</p>
+                <div id="progress-bar"></div>
+            </div>
+
+          <div id="answers-box">
+              <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+              <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+              <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+              <button><span class="btn-letter"></span> <span class="question-answer"></span></button>
+          </div>
+        </div>
+
+        <!-- SCORE BOARD -->
+        <div id="score-container" class="hide">
+            <div><h2>Parabéns!🎉</h2></div>
+          <div id="display-score"></div>
+          
+      
+          
+          <button id="restart">Refazer teste</button>
+        </div>
+
+        <!-- TEMPLATE RESPOSTA -->
+        <button class="answer-template hide">
+          <span class="btn-letter"></span> <span class="question-answer"></span>
+        </button>
+      </main>
+
+    </div>
+    </script>
+  </body>
+</html>

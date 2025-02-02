@@ -1,0 +1,245 @@
+/* GERAL */
+body {
+    font-family: 'Nunito Sans', Arial, sans-serif;
+    background: linear-gradient(to bottom, #392361, #6a1b9a); 
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-attachment: fixed; /* Garante que o fundo cubra toda a página */
+}
+
+
+/* ESCONDER ELEMENTOS */
+.hide {
+    display: none;
+}
+
+/* contende baranco perguntas*/
+#quizz-container,
+#score-container {
+    color: #222;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff; /* Cor de fundo do container */
+    margin: 20px auto; /* Espaçamento automático para centralizar */
+    border-radius: 15px; /* Borda arredondada */
+}
+
+
+/* cabeçalho perfil tech*/
+/* HEADER */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* Cor do cabeçalho mais tecnológica */
+    padding: 2px 18px; /* Maior espaço interno */
+    border-radius: 8px; /* Bordas arredondadas no topo */
+    box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.3);
+    animation: pulse 0s infinite; /* Adiciona o efeito de pulsar */
+}
+
+.header img {
+    max-width: 130px; /* Tamanho máximo ajustado */
+    height: auto;
+    animation: pulse 0s infinite; /* Adiciona o efeito de pulsar com duração diferente */
+}
+
+
+
+/* SCORE CONTAINER TEXT */
+#score-container p {
+    margin: 20px 0;
+}
+
+#score-container #display-score {
+    font-size: 18px; /* Tamanho da fonte ajustado */
+    font-weight: 0;
+    color: #333; /* Cor do texto */
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+
+/* RESTART BUTTON */
+#restart {
+    background-color: #333; /* Cor de fundo do botão */
+    color: #fff;
+    font-weight: bold;
+    height: 50px;
+    border: none; /* Removido borda para um visual mais limpo */
+    width: 200px; /* Largura do botão ajustada */
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Adicionado efeito de transformação */
+}
+
+#restart:hover {
+    background-color: #555; /* Cor do fundo no hover */
+    transform: scale(1.05); /* Efeito de escala no hover */
+}
+
+
+/* perguntas e barra de progresso */
+#question-container {
+    position: relative; /* Define o contêiner como relativo para o posicionamento absoluto do progresso */
+    margin-left: 20px;
+    width: 100%;
+    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da tela */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Garante que o preenchimento não saia para fora do contêiner */
+}
+
+#question {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adiciona um espaço abaixo da pergunta */
+    margin-left: 0; /* Garante que o elemento comece na margem esquerda */
+    padding-left: 0; /* Garante que não haja preenchimento extra à esquerda */
+    text-align: left; /* Alinha o texto à esquerda */
+    word-wrap: break-word; /* Adiciona quebra de linha automática */
+    overflow-wrap: break-word; /* Garante que palavras longas sejam quebradas */
+    width: 100%; /* Garante que o texto ocupe toda a largura do contêiner */
+    box-sizing: border-box; /* Inclui o preenchimento e borda no cálculo da largura */
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+#progress-text {
+    position: absolute; /* Permite o posicionamento específico */
+    right: 87px; /* Ajuste a distância da borda direita conforme necessário */
+    bottom: 10px; /* Ajuste a distância da borda inferior ou use `top` para posição vertical */
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+}
+
+
+#progress-bar {
+    width: 100%; /* A barra ocupa a largura do container */
+    height: 5px;
+    background-color: #4c2d84;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+
+.hide {
+    display: none;
+}
+
+
+/*botao prespostas*/
+#answers-box {
+    width: 100%;
+    max-width: 750px;
+    margin:  auto;
+}
+
+#answers-box button {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    color: #222;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#answers-box button:hover {
+    background-color: #4c2d84;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+#answers-box .btn-letter {
+    font-size: 19px;
+    font-weight: bold;
+    background-color: #2a272a;
+    color: #fff;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 60px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.question-answer {
+    flex: 1;
+    padding: 10px;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 450px) {
+    #quizz-container,
+    #score-container {
+        border: none;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    #answers-box {
+        max-width: 100%;
+    }
+
+    #answers-box button {
+        font-size: 16px;
+    }
+
+    #answers-box .btn-letter {
+        font-size: 20px;
+    }
+
+    #score-container #display-score {
+        font-size: 28px;
+    }
+}
+
+.draggable-item, .movable-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: move;
+    transition: background-color 0.3s;
+}
+
+.draggable-item:hover, .movable-item:hover {
+    background-color: #e0e0e0;
+}
+
+.drop-zone {
+    padding: 20px;
+    border: 2px dashed #ccc;
+    margin-top: 20px;
+    text-align: center;
+}
+
