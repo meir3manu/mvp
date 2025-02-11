@@ -5,16 +5,15 @@ body {
     margin: 0;
     padding: 0;
     color: #fff;
-    background-attachment: fixed; /* Garante que o fundo cubra toda a página */
+    background-attachment: fixed;
 }
-
 
 /* ESCONDER ELEMENTOS */
 .hide {
     display: none;
 }
 
-/* contende baranco perguntas*/
+/* Container principal */
 #quizz-container,
 #score-container {
     color: #222;
@@ -23,14 +22,12 @@ body {
     border: 1px solid #e0e0e0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
-    max-width: 800px;
-    background-color: #fff; /* Cor de fundo do container */
-    margin: 20px auto; /* Espaçamento automático para centralizar */
-    border-radius: 15px; /* Borda arredondada */
+    max-width: 500px;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 15px;
 }
 
-
-/* cabeçalho perfil tech*/
 /* HEADER */
 @keyframes pulse {
     0% { transform: scale(1); }
@@ -42,20 +39,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff; /* Cor do cabeçalho mais tecnológica */
-    padding: 2px 18px; /* Maior espaço interno */
-    border-radius: 8px; /* Bordas arredondadas no topo */
+    background-color: #fff;
+    padding: 5px 18px;
+    border-radius: 8px;
     box-shadow: 0px 6px 9px rgba(0, 0, 0, 0.3);
-    animation: pulse 0s infinite; /* Adiciona o efeito de pulsar */
 }
 
 .header img {
-    max-width: 130px; /* Tamanho máximo ajustado */
+    max-width: 130px;
     height: auto;
-    animation: pulse 0s infinite; /* Adiciona o efeito de pulsar com duração diferente */
 }
-
-
 
 /* SCORE CONTAINER TEXT */
 #score-container p {
@@ -63,57 +56,55 @@ body {
 }
 
 #score-container #display-score {
-    font-size: 18px; /* Tamanho da fonte ajustado */
-    font-weight: 0;
-    color: #333; /* Cor do texto */
-    background-color: #f0f0f0;
-    border-radius: 12px;
-    text-align: left; /* Alinha o texto à esquerda */
+    color: #222;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 15px;
 }
-
 
 /* RESTART BUTTON */
 #restart {
-    background-color: #333; /* Cor de fundo do botão */
+    background-color: #333;
     color: #fff;
     font-weight: bold;
     height: 50px;
-    border: none; /* Removido borda para um visual mais limpo */
-    width: 200px; /* Largura do botão ajustada */
+    border: none;
+    width: 200px;
     text-transform: uppercase;
     margin-top: 20px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Adicionado efeito de transformação */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #restart:hover {
-    background-color: #555; /* Cor do fundo no hover */
-    transform: scale(1.05); /* Efeito de escala no hover */
+    background-color: #555;
+    transform: scale(1.05);
 }
 
-
-/* perguntas e barra de progresso */
+/* PERGUNTAS E BARRA DE PROGRESSO */
 #question-container {
-    position: relative; /* Define o contêiner como relativo para o posicionamento absoluto do progresso */
-    margin-left: 20px;
+    position: relative;
     width: 100%;
-    max-width: 100%; /* Garante que o contêiner não ultrapasse a largura da tela */
+    max-width: 100%;
     padding: 10px 20px;
-    box-sizing: border-box; /* Garante que o preenchimento não saia para fora do contêiner */
+    box-sizing: border-box;
 }
 
 #question {
     font-size: 18px;
     color: black;
     font-weight: bold;
-    margin-bottom: 20px; /* Adiciona um espaço abaixo da pergunta */
-    margin-left: 0; /* Garante que o elemento comece na margem esquerda */
-    padding-left: 0; /* Garante que não haja preenchimento extra à esquerda */
-    text-align: left; /* Alinha o texto à esquerda */
-    word-wrap: break-word; /* Adiciona quebra de linha automática */
-    overflow-wrap: break-word; /* Garante que palavras longas sejam quebradas */
-    width: 100%; /* Garante que o texto ocupe toda a largura do contêiner */
-    box-sizing: border-box; /* Inclui o preenchimento e borda no cálculo da largura */
+    margin-bottom: 20px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 p {
@@ -121,39 +112,28 @@ p {
     padding: 0;
 }
 
-
-
-
-
 #progress-text {
-    position: absolute; /* Permite o posicionamento específico */
-    right: 87px; /* Ajuste a distância da borda direita conforme necessário */
-    bottom: 10px; /* Ajuste a distância da borda inferior ou use `top` para posição vertical */
+    position: absolute;
+    right: 87px;
+    bottom: 10px;
     font-size: 13px;
     color: black;
     font-weight: bold;
 }
 
-
 #progress-bar {
-    width: 100%; /* A barra ocupa a largura do container */
+    width: 100%;
     height: 5px;
     background-color: #4c2d84;
     border-radius: 3px;
     margin-top: 5px;
 }
 
-
-.hide {
-    display: none;
-}
-
-
-/*botao prespostas*/
+/* BOTÕES DE RESPOSTA */
 #answers-box {
     width: 100%;
     max-width: 750px;
-    margin:  auto;
+    margin: auto;
 }
 
 #answers-box button {
@@ -201,9 +181,20 @@ p {
 @media (max-width: 450px) {
     #quizz-container,
     #score-container {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
         border: none;
-        width: 100%;
         box-shadow: none;
+    }
+
+    #score-container #display-score {
+        font-size: 24px;
+    }
+
+    #question {
+        font-size: 16px;
+        text-align: center;
     }
 
     #answers-box {
@@ -211,18 +202,31 @@ p {
     }
 
     #answers-box button {
-        font-size: 16px;
+        font-size: 14px;
+        padding: 12px;
+        border-radius: 8px;
     }
 
     #answers-box .btn-letter {
-        font-size: 20px;
+        font-size: 18px;
+        flex: 0 0 50px;
+        padding: 8px;
     }
 
-    #score-container #display-score {
-        font-size: 28px;
+    #progress-bar {
+        height: 4px;
+    }
+
+    .header {
+        padding: 5px 12px;
+    }
+
+    .header img {
+        max-width: 100px;
     }
 }
 
+/* ELEMENTOS ARRASTÁVEIS */
 .draggable-item, .movable-item {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
@@ -242,4 +246,3 @@ p {
     margin-top: 20px;
     text-align: center;
 }
-
